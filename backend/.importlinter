@@ -1,0 +1,76 @@
+[importlinter]
+root_package = app
+include_external_packages = True
+
+# --- Per-module hexagonal layers (R-ARCH-02) ---
+[importlinter:contract:module-layers]
+name = Module layers (api → infrastructure → application → domain)
+type = layers
+layers =
+    api
+    infrastructure
+    application
+    domain
+containers =
+    app.modules.admin
+    app.modules.agent_settings
+    app.modules.analytics
+    app.modules.answering
+    app.modules.audit
+    app.modules.billing
+    app.modules.catalogue
+    app.modules.channels
+    app.modules.conversations
+    app.modules.customers
+    app.modules.faq
+    app.modules.guard_rules
+    app.modules.identity
+    app.modules.learning
+    app.modules.notifications
+    app.modules.orders
+    app.modules.public
+    app.modules.settings
+    app.modules.tenancy
+    app.modules.usage
+
+# --- Domain stays framework-free (R-ARCH-02) ---
+[importlinter:contract:domain-framework-free]
+name = Domain layer does not import frameworks
+type = forbidden
+source_modules =
+    app.modules.*.domain
+forbidden_modules =
+    fastapi
+    sqlalchemy
+    redis
+    arq
+    httpx
+
+# --- Cross-module: only public application facades/contracts (R-ARCH-03) ---
+[importlinter:contract:module-independence]
+name = Business modules are independent
+type = independence
+modules =
+    app.modules.admin
+    app.modules.agent_settings
+    app.modules.analytics
+    app.modules.answering
+    app.modules.audit
+    app.modules.billing
+    app.modules.catalogue
+    app.modules.channels
+    app.modules.conversations
+    app.modules.customers
+    app.modules.faq
+    app.modules.guard_rules
+    app.modules.identity
+    app.modules.learning
+    app.modules.notifications
+    app.modules.orders
+    app.modules.public
+    app.modules.settings
+    app.modules.tenancy
+    app.modules.usage
+# When facades exist, allow only:
+# ignore_imports =
+#     app.modules.X.application.facade -> app.modules.Y

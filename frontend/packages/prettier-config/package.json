@@ -1,0 +1,16 @@
+{
+  "name": "@sales-agent/prettier-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "scripts": {
+    "lint": "node -e \"process.exit(0)\""
+  },
+  "peerDependencies": {
+    "prettier": "^3.4.0"
+  }
+}

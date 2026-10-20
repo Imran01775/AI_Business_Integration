@@ -1,0 +1,121 @@
+
+# ==========================================
+# Environment variables and secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# ==========================================
+# Next.js
+# ==========================================
+.next/
+out/
+build/
+dist/
+next-env.d.ts
+
+# Dependencies
+node_modules/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# Python / FastAPI
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# ==========================================
+# AI / Machine Learning
+# ==========================================
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.gguf
+*.h5
+*.keras
+
+# Hugging Face cache
+.cache/huggingface/
+huggingface_cache/
+
+# Vector database and local AI data
+chroma/
+chroma_db/
+vector_db/
+faiss_index/
+
+# ==========================================
+# Logs and temporary files
+# ==========================================
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+
+# ==========================================
+# IDE and editor
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Local databases
+# ==========================================
+*.sqlite
+*.sqlite3
+*.db
+
+# ==========================================
+# Docker overrides
+# ==========================================
+docker-compose.override.yml
+
+# ==========================================
+# Local configuration
+# ==========================================
+*.local

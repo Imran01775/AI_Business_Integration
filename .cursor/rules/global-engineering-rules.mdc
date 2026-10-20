@@ -1,0 +1,34 @@
+---
+description: Mandatory global engineering rules for the AI Sales Agent Platform (always applied)
+alwaysApply: true
+---
+
+# Global Engineering Rules (mandatory)
+
+Full rules: `docs/GLOBAL_RULES.md` — read it before any implementation, architectural decision or generated code. Current phase plans: `docs/phases/`. Index: `docs/00_INDEX.md`.
+
+## Non-negotiables
+- **Modular monolith, ports & adapters.** Module layers `domain → application → infrastructure/api`; dependencies inward only. Modules talk only via public application interfaces or events — never import another module's internals or tables.
+- **Tenant isolation.** Every tenant table has `tenant_id` + RLS; every query/cache key/job/log carries `tenant_id`. No cross-tenant learning or retrieval.
+- **AI only via `AIClient`.** No provider SDK outside `ai-platform/src/ai_platform/providers/`. Deterministic first: Guard → Seller Rules → DB → FAQ → Cache → LLM last. Never send full history. Track tokens/STT units/cost on every call. Check quota + kill switch first. Voice uses the same pipeline.
+- **Safety.** LLM facts validated against DB; never violate `min_price`; orders need customer confirmation; never invent facts.
+- **No hardcoded business values.** Thresholds, limits, texts, prices, timers, models come from the settings resolver, message templates, entitlements or prompt registry. Business chain: default → platform → plan → tenant → channel → conversation. User chain: default → platform → user.
+- **API-first.** `/api/v1`, OpenAPI contract, standard error envelope `{error:{code,message,details,trace_id}}`, cursor pagination, idempotency keys, cookie (web) + Bearer (mobile) auth. No business rules in clients.
+- **Errors & history.** Typed errors, never swallow exceptions, structured JSON logs with `trace_id`, audit entry for every write, status history tables, `error_events` for business failures.
+- **Tests.** Unit tests for every use case, contract tests for every adapter, tenant-isolation tests, deterministic fakes for AI.
+- **Quality.** Python 3.12 typed + mypy strict + ruff; TypeScript strict; i18n (bn/en) for all UI text; migrations only via Alembic (expand → contract).
+- **Process.** Implement phases in order as vertical slices. ADR for every architectural decision. Update `docs/PROGRESS_LOG.md` when a phase completes.
+- **No git commits/pushes, Docker, CI/CD or deployment actions unless explicitly requested.** Ignore `requirements.txt`.
+
+## Example
+```python
+# BAD — provider SDK + hardcoded values in business code
+from openai import AsyncOpenAI
+if count > 3: reply = "Please ask about our products"
+
+# GOOD — port + settings + templates
+threshold = await settings.resolve("rules.irrelevant_threshold", ctx)
+if count > threshold:
+    reply = await templates.render("rules.redirect_message", ctx)
+answer = await ai_client.complete(prompt_key="answer.product_question", ctx=ctx, vars=v)
+```

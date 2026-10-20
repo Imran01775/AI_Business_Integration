@@ -1,0 +1,52 @@
+{
+  "common": {
+    "appName": "AI Sales Agent",
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "language": "Language",
+    "theme": "Theme",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "register": "Create account"
+  },
+  "nav": {
+    "home": "Home",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "dataDeletion": "Data deletion",
+    "settings": "Settings",
+    "dashboard": "Dashboard",
+    "admin": "Admin"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "displayName": "Display name",
+    "forgotPassword": "Forgot password?",
+    "resetPassword": "Reset password",
+    "verifyEmail": "Verify your email",
+    "verifyInstructions": "We sent a verification link to your email. Open it to activate your account.",
+    "noAccount": "No account?",
+    "hasAccount": "Already have an account?"
+  },
+  "settings": {
+    "title": "Your settings",
+    "saved": "Settings saved"
+  },
+  "tenant": {
+    "switch": "Switch business",
+    "create": "Create business",
+    "name": "Business name",
+    "slug": "Slug"
+  },
+  "errors": {
+    "common.unknown": "Something went wrong. Please try again.",
+    "common.validation_failed": "Please check your input.",
+    "auth.invalid_credentials": "Invalid email or password.",
+    "auth.unauthenticated": "Please sign in to continue.",
+    "auth.rate_limited": "Too many attempts. Please wait and try again.",
+    "permission.denied": "You do not have permission to do that.",
+    "templates.not_found": "Content is not available yet."
+  }
+}

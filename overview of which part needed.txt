@@ -1,0 +1,13 @@
+**মোটামুটি হ্যাঁ — কিন্তু সব phase একই জিনিস নয়।**
+
+| Range | কী পাবেন |
+|--------|-----------|
+| **00 → 20** | PDF v1.5 **MVP** (Messenger, rules, voice, engine, panel, billing, admin, learning…) + testing/quality — **product “built”** |
+| **21 → 22** | Docker + CI/CD — **deferred**; deploy automation চাইলে আলাদা approve/start |
+| **23** | **Production go-live** (server, backup, Meta live, checklist) |
+| **24 → 25** | **ভবিষ্যৎ** — mobile app, Instagram/WhatsApp, store sync ইত্যাদি; MVP-র বাইরে |
+
+**সংক্ষেপে:**  
+- শুধু **00–20** চালালে → **MVP software complete** (local/staging-এ চালানো যায়, Phase 00 থেকে tooling লাগে)।  
+- **Real production** → সাধারণত **23** পর্যন্ত (আর চাইলে **21–22**)।  
+- **00–25 সব** → MVP + deploy path + **extra features** (mobile, আরও channel) — PDF-এর “Phase 2/3+” অংশ।

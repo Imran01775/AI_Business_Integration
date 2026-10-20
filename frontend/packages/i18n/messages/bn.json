@@ -1,0 +1,52 @@
+{
+  "common": {
+    "appName": "AI সেলস এজেন্ট",
+    "loading": "লোড হচ্ছে…",
+    "save": "সংরক্ষণ",
+    "cancel": "বাতিল",
+    "language": "ভাষা",
+    "theme": "থিম",
+    "signIn": "সাইন ইন",
+    "signOut": "সাইন আউট",
+    "register": "অ্যাকাউন্ট তৈরি"
+  },
+  "nav": {
+    "home": "হোম",
+    "privacy": "গোপনীয়তা",
+    "terms": "শর্তাবলী",
+    "dataDeletion": "তথ্য মুছে ফেলা",
+    "settings": "সেটিংস",
+    "dashboard": "ড্যাশবোর্ড",
+    "admin": "অ্যাডমিন"
+  },
+  "auth": {
+    "email": "ইমেইল",
+    "password": "পাসওয়ার্ড",
+    "displayName": "নাম",
+    "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন?",
+    "resetPassword": "পাসওয়ার্ড রিসেট",
+    "verifyEmail": "ইমেইল যাচাই করুন",
+    "verifyInstructions": "আমরা আপনার ইমেইলে যাচাই লিংক পাঠিয়েছি। অ্যাকাউন্ট সক্রিয় করতে লিংকটি খুলুন।",
+    "noAccount": "অ্যাকাউন্ট নেই?",
+    "hasAccount": "ইতিমধ্যে অ্যাকাউন্ট আছে?"
+  },
+  "settings": {
+    "title": "আপনার সেটিংস",
+    "saved": "সেটিংস সংরক্ষিত হয়েছে"
+  },
+  "tenant": {
+    "switch": "ব্যবসা পরিবর্তন",
+    "create": "ব্যবসা তৈরি",
+    "name": "ব্যবসার নাম",
+    "slug": "স্লাগ"
+  },
+  "errors": {
+    "common.unknown": "কিছু ভুল হয়েছে। আবার চেষ্টা করুন।",
+    "common.validation_failed": "অনুগ্রহ করে ইনপুট যাচাই করুন।",
+    "auth.invalid_credentials": "ভুল ইমেইল বা পাসওয়ার্ড।",
+    "auth.unauthenticated": "চালিয়ে যেতে সাইন ইন করুন।",
+    "auth.rate_limited": "অনেকবার চেষ্টা হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।",
+    "permission.denied": "আপনার এই কাজের অনুমতি নেই।",
+    "templates.not_found": "কন্টেন্ট এখনো উপলব্ধ নয়।"
+  }
+}

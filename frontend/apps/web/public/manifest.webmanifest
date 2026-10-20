@@ -1,0 +1,9 @@
+{
+  "name": "AI Sales Agent",
+  "short_name": "Sales Agent",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "lang": "en"
+}

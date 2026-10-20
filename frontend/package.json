@@ -1,0 +1,20 @@
+{
+  "name": "sales-agent-frontend",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "lint": "turbo run lint",
+    "format": "prettier --check \"**/*.{ts,tsx,js,mjs,cjs,json,md}\"",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,mjs,cjs,json,md}\"",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "gen:api": "pnpm --filter @sales-agent/api-client gen:api"
+  },
+  "devDependencies": {
+    "@sales-agent/eslint-config": "workspace:*",
+    "@sales-agent/prettier-config": "workspace:*",
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.3"
+  }
+}
